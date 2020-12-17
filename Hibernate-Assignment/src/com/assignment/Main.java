@@ -34,13 +34,27 @@ public class Main {
 			{
 			case 1:
 				Student saha=new Student();
-				saha.setId(118);
-				saha.setName("king");
-				saha.setSection("D");
-				saha.setAddress("Hyd");
-				saha.setMarks(454);
+				System.out.println("Enter id");
+				int id=sc.nextInt();
+				saha.setId(id);
+				System.out.println("Enter name");
+				String name=sc.next();
+				saha.setName(name);
+				System.out.println("Enter section");
+				String section=sc.next();
+				saha.setSection(section);
+				System.out.println("Enter address");
+				String address=sc.next();
+				saha.setAddress(address);
+				System.out.println("Enter marks");
+				int marks=sc.nextInt();
+				saha.setMarks(marks);
 				Transaction t=ss.beginTransaction();
-				ss.save(saha);
+				Object oo=ss.save(saha);
+				if(oo!=null)
+				{
+					System.out.println("Record inserted");
+				}
 				t.commit();
 				break;
 								
@@ -51,12 +65,12 @@ public class Main {
 				if(mode==1)
 				{
 					System.out.println("Enter name");
-					String name=sc.next();
+					String named=sc.next();
 					System.out.println("Enter id");
-					int id=sc.nextInt();
+					int id1=sc.nextInt();
 					qr=ss.createQuery("update Student s set s.name=:x where s.id=:y");
-					qr.setParameter("x",name);
-					qr.setParameter("y", id);
+					qr.setParameter("x",named);
+					qr.setParameter("y", id1);
 					qr.executeUpdate();
 				
 				}
@@ -65,10 +79,10 @@ public class Main {
 					System.out.println("Enter address");
 					String add=sc.next();
 					System.out.println("Enter id");
-					int id=sc.nextInt();
+					int id5=sc.nextInt();
 					qr=ss.createQuery("update Student s set s.address=:x where s.id=:y");
 					qr.setParameter("x",add);
-					qr.setParameter("y", id);
+					qr.setParameter("y", id5);
 					qr.executeUpdate();
 	
 				}
@@ -77,10 +91,10 @@ public class Main {
 					System.out.println("Enter section");
 					String sec=sc.next();
 					System.out.println("Enter id");
-					int id=sc.nextInt();
+					int idd=sc.nextInt();
 					qr=ss.createQuery("update Student s set s.section=:x where s.id=:y");
 					qr.setParameter("x",sec);
-					qr.setParameter("y", id);
+					qr.setParameter("y", idd);
 					qr.executeUpdate();
 				}
 				else if(mode==4)
@@ -88,10 +102,10 @@ public class Main {
 					System.out.println("Enter marks");
 					int mark=sc.nextInt();
 					System.out.println("Enter id");
-					int id=sc.nextInt();
+					int iddd=sc.nextInt();
 					qr=ss.createQuery("update Student s set s.marks=:x where s.id=:y");
 					qr.setParameter("x",mark);
-					qr.setParameter("y", id);
+					qr.setParameter("y", iddd);
 					qr.executeUpdate();
 				}
 				Transaction tx=ss.beginTransaction();
@@ -100,9 +114,9 @@ public class Main {
 			case 3:
 				Transaction ty=ss.beginTransaction();
 				System.out.println("Enter id number");
-				int id=sc.nextInt();
+				int id4=sc.nextInt();
 				qr=ss.createQuery("delete from Student s where s.id=?");
-				qr.setParameter(0, id);
+				qr.setParameter(0, id4);
 				qr.executeUpdate();
 				ty.commit();
 				break;

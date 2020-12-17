@@ -13,7 +13,4 @@
  <property name="hbm2ddl.auto">update</property>
   <mapping resource="assignment.xml" />
  </session-factory>
- 
- 
- 
  </hibernate-configuration>
