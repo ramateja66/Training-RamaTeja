@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+body{
+ background-image:url(learning.jpg);
+ background-repeat:no-repeat;
+ background-size:100%;
+}
+</style>
+</head>
+<body bgcolor="lightgray" align="center">
+<a href="admin_home.html">Home</a>||
+<a href="uploadcourse.html">Upload Course</a>||
+<a href="index.html">Logout</a>
+<H2>Upload Course</H2>
+<form method="post" action="./courseController" enctype="multipart/form-data">
+<table align="center">
+<tr>
+<td>Course Name:</td>
+<td><input type="text" name="name"></td>
+</tr>
+<tr>
+<td>Subject:</td>
+<td><input type="text" name="subject"></td>
+</tr>
+<tr>
+<td>Upload file:</td>
+<td><input type="file" name="file" ></td>
+</tr>
+</table>
+<input type="submit" value="Upload">
+</form>
+</body>
+</html>
