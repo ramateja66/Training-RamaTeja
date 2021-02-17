@@ -1,0 +1,15 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.company.Models" table="models">
+<id name="m_id" column="m_id"></id>
+<property name="model_name" column="model_name"></property>
+<set name="manufacturer" cascade="all" table="details">
+<key column="m_id"></key>
+<many-to-many class="com.company.Manufacturer" column="id"></many-to-many>
+</set>
+</class>
+
+
+</hibernate-mapping>
