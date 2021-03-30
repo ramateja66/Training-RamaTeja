@@ -1,7 +1,4 @@
 package com.motivity;
-
-
-
 import java.util.List;
 
 import org.hibernate.Criteria;
