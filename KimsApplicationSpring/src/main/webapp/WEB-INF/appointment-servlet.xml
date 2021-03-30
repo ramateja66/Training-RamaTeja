@@ -5,17 +5,13 @@
                            http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/context
                            http://www.springframework.org/schema/context/spring-context.xsd ">
-
-	<context:component-scan
-		base-package="com.motivity" />
-
-	<bean
+	<context:component-scan	base-package="com.motivity" />
+<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/jsp/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
-
-	<bean id="connection"
+		<bean id="connection"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName"
 			value="com.mysql.cj.jdbc.Driver"></property>
@@ -24,7 +20,6 @@
 		<property name="username" value="root"></property>
 		<property name="password" value="root"></property>
 	</bean>
-
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 		<property name="dataSource" ref="connection"></property>
@@ -43,7 +38,5 @@
 				<prop key="hibernate.format_sql">true</prop>
 			</props>
 		</property>
-
 	</bean>
-
 </beans>

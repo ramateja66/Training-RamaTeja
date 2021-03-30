@@ -2,7 +2,10 @@ package com.motivity;
 
 
 
+import java.util.List;
+
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,9 +42,12 @@ public class Operations
 	}
 	public Employee view(int id)
 	{
-		Session ss=hibernateTemplate.getSessionFactory().openSession();
-		Employee ee=ss.load(Employee.class, id);
-		return ee;
+		return hibernateTemplate.get(Employee.class, id);
+	}
+	
+	public Employeer viewemployeer(int id)
+	{
+		return hibernateTemplate.get(Employeer.class, id);
 	}
 	public void erinsert(Employeer er)
 	{
