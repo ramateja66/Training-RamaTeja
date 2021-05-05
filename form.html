@@ -1,0 +1,55 @@
+<html>
+<head>
+<script>
+	function text(x)
+	{
+     
+			document.getElementById("mycode").style.display="none";
+			document.getElementById("formchanges").style.display="none";
+			
+		
+		if(x==0)
+			{
+			document.getElementById("mycode").style.display="block";
+			}
+		else if(x==1)
+			{
+			document.getElementById("formchanges").style.display="block";
+			}
+		
+		return;
+	}
+</script>
+</head>
+
+<body align="center">
+<h1>Password Reset Form</h1>
+
+
+<form>
+<input type="radio" name="decision" value="password" onclick="text(0)" >Password Reset
+<br>
+<br>
+<input type="radio" name="decision" value="Details changes" onclick="text(1)">Details Changes
+</form>
+
+<div id="mycode" hidden>
+<form action="/Registration/empReset" method="POST">
+
+<fieldset>
+<i>Old Password</i>
+<input type="password" name="oldpassword" >
+<br>
+<i>New Password</i>
+<input type="password" name="newpassword" >
+<br>
+<input type="submit" value="submit">
+</fieldset>
+</form>
+</div>
+
+<div id="formchanges" hidden>
+<h1>Form changes</h1>
+</div>
+</body>
+</html>
